@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<style>
+	#wrapper{
+		margin: 0 auto;
+	}
+</style>
+
+<script>
+	$(document).ready(function() {
+		$("#signup").click(function() {
+			$(location).attr("href", "signup.jsp");
+		})
+	})
+</script>
+
+</head>
+<body>
+	<div id="#wrapper">
+	<form action="login.do" method="post">
+		<table border="1">
+			<tr>
+				<th colspan="2">로그인</th>
+			</tr>
+			<tr>
+				<td>아이디 </td> 
+				<td><input type="text" name="id">
+			</tr>
+			<tr>
+				<td>패스워드</td>
+				<td><input type="password" name="pw" placeholder="패스워드를 입력하세요">
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center;">
+				<button id="login">로그인</button> 
+				<button type="button" id="signup">회원가입</button>
+				</td>
+			</tr>
+		</table>
+		</form>
+	</div>
+</body>
+</html>

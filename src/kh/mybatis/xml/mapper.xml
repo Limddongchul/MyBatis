@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Users">
+	<select id="selectuser" resultType="boolean">
+		select * from users
+		<trim prefix="where">
+			user_id=#{id} and password=#{pw}
+		</trim> 
+	</select>
+	
+	<insert id="insert" parameterType="UsersDTO">
+		insert into users values(users_sequence.nextval,#{user_id},#{password},#{name},#{email})
+	</insert>
+	
+	<delete id="delete" parameterType="String">
+		delete from users
+		<trim prefix="where">
+			user_id=#{id}
+		</trim>
+	</delete>
+	
+	<select id="select" resultType="UsersDTO">
+		select * from users where user_id=#{id}
+	</select>
+
+</mapper>
